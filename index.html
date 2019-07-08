@@ -5,18 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link src="assets/images/letters.jpg">
+    <link src="assets/css/style.css">
 </head>
 <h1>Word Guess Game</h1>
 <body>
-    /* creating Guesses counter with max no of guesses */
-    /* creating Losses counter */
-    /* creating Wins counter */ 
-    /* resetting Wins counter */
-    /* getting input from user */
-    /* check if no of guesses greater than 0 then continue */
-    /* comparing user input with computer guess */
-    /* if user and computer guesses are matching then print out you win and reset wins then get back to user input */
-    /* if guesses not matching then increment losses by one and get back to guesses condition */
-    /* if no of guesses = 0 then print out you lost (losses counter) times */
+    
+     
+<script>
+    // creating Guesses,loses and wins counters
+    var alphabet=['a','b','c','d','e','f','g','h','i','j','k','l',
+    'm','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    var guesses=5, losses=0, wins=0;
+    
+    // getting computer input 
+    var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    alert(computerGuess)
+
+    
+   
+    // getting input from user - REVISIT TO CORRECT / MAKE IT WORK 
+        document.onkeypress = function(event) {
+            var userGuess = event.key;
+    
+        }
+
+    // comparing user input with computer guess & updating counters accordingly 
+    
+        if (userGuess===computerGuess) {
+            wins++;
+        } 
+        else {
+            losses++;
+            guesses--;
+        }
+
+    // printing final results  
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+    
+</script>
 </body>
 </html>
+
+
