@@ -5,45 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
-    <link src="assets/images/letters.jpg">
-    <link src="assets/css/style.css">
+    <h1>Word Guess Game</h1>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    
 </head>
-<h1>Word Guess Game</h1>
+
 <body>
-    
+    <div id="container">
+    <h2>Wins</h2>
+    <h2>losses</h2>
+    <h2>Letters Guessed</h2>
+</div>
      
+<div id="Word"></div>
+
 <script>
-    // creating Guesses,loses and wins counters
-    var alphabet=['a','b','c','d','e','f','g','h','i','j','k','l',
-    'm','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    var guesses=5, losses=0, wins=0;
     
-    // getting computer input 
-    var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-    alert(computerGuess)
+    var choices=["Toyota", "Honda", "Nissan", "Ford", "BMW"]
+    for (var i=0; i<choices.length; i++){
+        var output = choices[i].split('');
+        console.log(output);
+    }
+
+    function checkAndReplace (x=output[i]) {
+        for (var i=0; i<choices.length; i++) {
+            if (x==answerArray[i]) {
+                blankArray[i] = answerArray[i];
+                window.alert(answerArray[i]);
+                document.write(wins+=wins);
+            }
+        }
+        document.write(losses+=losses);
+    }
+
+    // math.floor(math.random()*2+1);
+    var guessedArray = []
+    // var guessLetters = [guessedArray.charAt()];
+    // creating variables and array's variable 
+    var wins=0;
+    var losses=0;
+
+    var computerChoice =''
+console.log('before' + computerChoice)
+    function computerPick (x){
+       computerChoice=x[Math.floor(Math.random()*x.length)];
+
+    }
+    computerPick(choices)
+console.log('after' + computerChoice)
+
+
+
 
     
+
+
    
-    // getting input from user - REVISIT TO CORRECT / MAKE IT WORK 
-        document.onkeypress = function(event) {
-            var userGuess = event.key;
     
-        }
-
-    // comparing user input with computer guess & updating counters accordingly 
-    
-        if (userGuess===computerGuess) {
-            wins++;
-        } 
-        else {
-            losses++;
-            guesses--;
-        }
-
-    // printing final results  
-    document.getElementById('wins').innerHTML = "Wins: " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
     
 </script>
 </body>
